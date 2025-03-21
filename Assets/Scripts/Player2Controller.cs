@@ -45,7 +45,11 @@ public class Player2Controller : MonoBehaviour
             isOnGround = true;
             Debug.Log("Grounded");
         }
-        
+        if (collision.gameObject.CompareTag("Spike"))
+        {
+            Destroy(gameObject);
+        }
+
 
     }
 }   

@@ -23,13 +23,13 @@ public class Player1Controller : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround) 
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
         }
 
-        
+
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -38,7 +38,7 @@ public class Player1Controller : MonoBehaviour
             isOnGround = true;
             Debug.Log("Grounded");
         }
-        
+
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
@@ -48,6 +48,9 @@ public class Player1Controller : MonoBehaviour
             isOnGround = true;
             Debug.Log("Grounded");
         }
-
+        if (collision.gameObject.CompareTag("Spike"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
