@@ -5,11 +5,12 @@ using UnityEngine;
 public class Player1Controller : MonoBehaviour
 {
     public float speed = 10f;
-    public float jumpForce = 35f;
+    public float jumpForce;
     public float horizontalInput;
     public Rigidbody rb;
     public bool isOnGround;
     public float gravityMod;
+    public bool gameOver;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,21 +37,21 @@ public class Player1Controller : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
-            Debug.Log("Grounded");
+            
         }
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            gameOver = true;
         }
         if (collision.gameObject.CompareTag("Player"))
         {
             isOnGround = true;
-            Debug.Log("Grounded");
+            
         }
         if (collision.gameObject.CompareTag("Spike"))
         {
-            Destroy(gameObject);
+            gameOver = true;
         }
     }
 }

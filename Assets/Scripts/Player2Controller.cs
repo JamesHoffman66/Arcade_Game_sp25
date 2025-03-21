@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player2Controller : MonoBehaviour
 {
     public float speed = 10f;
+    public float jumpForce;
     public float VerticalInput;
     public Rigidbody rb2;
     public bool isOnGround;
@@ -24,7 +25,7 @@ public class Player2Controller : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha4) && isOnGround) 
         {
-            rb2.AddForce(Vector3.up * 35, ForceMode.Impulse);
+            rb2.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
         }
     }
@@ -33,21 +34,21 @@ public class Player2Controller : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
-            Debug.Log("Grounded");
+            
         }
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            
         }
         if (collision.gameObject.CompareTag("Player"))
         {
             isOnGround = true;
-            Debug.Log("Grounded");
+            
         }
         if (collision.gameObject.CompareTag("Spike"))
         {
-            Destroy(gameObject);
+           
         }
 
 
