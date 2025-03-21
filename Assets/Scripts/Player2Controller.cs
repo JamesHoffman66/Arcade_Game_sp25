@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player2Controller : MonoBehaviour
+{
+    public float speed = 10f;
+    public float VerticalInput;
+    public Rigidbody rb2;
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb2 = GetComponent<Rigidbody>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        VerticalInput = Input.GetAxis("Vertical");
+        transform.Translate(Vector3.right * VerticalInput * speed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.Alpha4)) 
+        {
+            rb2.AddForce(Vector3.up * 10, ForceMode.Impulse);
+        }
+    }
+}
