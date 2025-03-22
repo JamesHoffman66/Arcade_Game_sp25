@@ -26,22 +26,75 @@ public class EnemyAggroFixed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 lookDirection = (player.transform.position - transform.position).normalized;
         Vector2 directionToPlayer = player.transform.position - transform.position;
         Vector2 directionToPlayer2 = player2.transform.position - transform.position;
 
-
         float angleToPlayer = Vector3.Angle(transform.right, directionToPlayer);
         float angleToPlayer2 = Vector3.Angle(transform.right, directionToPlayer2);
+        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+        float distanceToPlayer2 = Vector2.Distance(transform.position, player2.transform.position);
+
+        GameObject closestPlayer = (distanceToPlayer < distanceToPlayer2) ? player : player2;
+
+        Vector3 lookDirection = (closestPlayer.transform.position - transform.position).normalized;
 
         bool playerInSight = angleToPlayer < fieldOfViewAngle / 2f;
         bool player2InSight = angleToPlayer2 < fieldOfViewAngle / 2f;
 
 
-        if (Vector2.Distance(transform.position, player.transform.position) < aggroRange && playerInSight || Vector2.Distance(transform.position, player2.transform.position) < aggroRange && player2InSight)
+        if (Vector2.Distance(transform.position, player.transform.position) < aggroRange && playerInSight || (Vector2.Distance(transform.position, player.transform.position) < aggroRange && playerInSight))
         {
             patrol = false;
+
         }
+        if (!patrol)
+        {
+            speed = 15;
+
+            rb.velocity = new Vector2(0, 0);
+            rb.AddForce(lookDirection * speed, ForceMode.Acceleration);
+
+
+            if (lookDirection.x > 0)
+            {
+                // Player is to the right, make the enemy face right
+                transform.localRotation = Quaternion.Euler(0, 0, 0); // Face right (no rotation on the y-axis)
+            }
+            else if (lookDirection.x < 0)
+            {
+                // Player is to the left, make the enemy face left
+                transform.localRotation = Quaternion.Euler(0, 180, 0); // Face left (180 degrees on the y-axis)
+            }
+
+            if (Vector2.Distance(transform.position, player.transform.position) > aggroRange && Vector2.Distance(transform.position, player2.transform.position) > aggroRange)
+            {
+                patrol = true;
+            }
+            if (transform.position.x > pointB.transform.position.x)
+            {
+
+                rb.velocity = new Vector2(0, 0);
+                rb.AddForce(lookDirection * -speed, ForceMode.Acceleration);
+                transform.position = new Vector3(pointB.transform.position.x, transform.position.y, transform.position.z);
+
+
+            }
+            if (transform.position.x < pointA.transform.position.x)
+            {
+
+                rb.velocity = new Vector2(0, 0);
+                rb.AddForce(lookDirection * -speed, ForceMode.Acceleration);
+                transform.position = new Vector3(pointA.transform.position.x, transform.position.y, transform.position.z);
+
+
+            }
+            if (Vector2.Distance(transform.position, player.transform.position) > aggroRange && Vector2.Distance(transform.position, player2.transform.position) > aggroRange)
+            {
+                patrol = true;
+            }
+        }
+
+
 
         if (patrol)
         {
@@ -67,40 +120,8 @@ public class EnemyAggroFixed : MonoBehaviour
                 transform.Rotate(0, 180, 0);
             }
         }
-        else
-        {
-            speed = 15;
-
-            rb.velocity = new Vector2(0, 0);
-            rb.AddForce(lookDirection * speed, ForceMode.Acceleration);
 
 
-
-
-            if (transform.position.x > pointB.transform.position.x)
-            {
-
-                rb.velocity = new Vector2(0, 0);
-                rb.AddForce(lookDirection * -speed, ForceMode.Acceleration);
-                transform.position = new Vector3(pointB.transform.position.x, transform.position.y, transform.position.z);
-
-
-            }
-            if (transform.position.x < pointA.transform.position.x)
-            {
-
-                rb.velocity = new Vector2(0, 0);
-                rb.AddForce(lookDirection * -speed, ForceMode.Acceleration);
-                transform.position = new Vector3(pointA.transform.position.x, transform.position.y, transform.position.z);
-
-
-            }
-            if (Vector2.Distance(transform.position, player.transform.position) > aggroRange && Vector2.Distance(transform.position, player2.transform.position) > aggroRange)
-            {
-                patrol = true;
-            }
-
-        }
 
     }
 }
