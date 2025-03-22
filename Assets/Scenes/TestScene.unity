@@ -28650,6 +28650,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 7075475471548534019, guid: 778a5da8f023f1d479c44ad5ef58625c, type: 3}
+      propertyPath: m_Constraints
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28663,6 +28667,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 205244758371210741, guid: da794fd9787811e40935f386eaa1e019, type: 3}
+      propertyPath: m_Constraints
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 4324780893878320952, guid: da794fd9787811e40935f386eaa1e019, type: 3}
       propertyPath: Player1
       value: 
