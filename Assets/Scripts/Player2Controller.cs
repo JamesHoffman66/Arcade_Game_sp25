@@ -9,11 +9,13 @@ public class Player2Controller : MonoBehaviour
     public float VerticalInput;
     public Rigidbody rb2;
     public bool isOnGround;
+    public GameObject Player1;
    
     // Start is called before the first frame update
     void Start()
     {
         rb2 = GetComponent<Rigidbody>();
+       
         
     }
 
@@ -28,6 +30,7 @@ public class Player2Controller : MonoBehaviour
             rb2.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
         }
+        
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -37,19 +40,20 @@ public class Player2Controller : MonoBehaviour
             
         }
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Spike") || collision.gameObject.CompareTag("EnemyProjectile")) 
         {
-            
+            Player1.GetComponent<Player1Controller>();
+            Player1Controller player1controller = Player1.GetComponent<Player1Controller>();
+            player1controller.gameOver = true;
+
         }
         if (collision.gameObject.CompareTag("Player"))
         {
             isOnGround = true;
             
         }
-        if (collision.gameObject.CompareTag("Spike"))
-        {
-           
-        }
+       
+       
 
 
     }

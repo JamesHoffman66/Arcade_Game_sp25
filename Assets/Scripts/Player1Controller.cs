@@ -29,28 +29,34 @@ public class Player1Controller : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
         }
-
+        if (gameOver)
+        {
+            Debug.Log("Game Over");
+        }
 
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Player"))
         {
             isOnGround = true;
-            
+
         }
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Spike") || collision.gameObject.CompareTag("EnemyProjectile"))
         {
             gameOver = true;
+            Debug.Log("Game Over");
         }
-        if (collision.gameObject.CompareTag("Player"))
+
+
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("EnemyProjectile"))
         {
-            isOnGround = true;
-            
-        }
-        if (collision.gameObject.CompareTag("Spike"))
-        {
+            Debug.Log("Game Over");
             gameOver = true;
         }
     }

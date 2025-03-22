@@ -28,9 +28,9 @@ public class EnemyAggro : MonoBehaviour
     void Update()
     {
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-        Vector2 point = currentPoint.position - transform.position;
         Vector2 directionToPlayer = player.transform.position - transform.position;
         Vector2 directionToPlayer2 = player2.transform.position - transform.position;
+        
 
         float angleToPlayer = Vector3.Angle(transform.right, directionToPlayer);
         float angleToPlayer2 = Vector3.Angle(transform.right, directionToPlayer2);
@@ -50,7 +50,7 @@ public class EnemyAggro : MonoBehaviour
 
         if (patrol)
         {
-
+            speed = 2.5f;
             if (currentPoint == pointB.transform)
             {
                 rb.velocity = new Vector2(speed, 0);
@@ -74,14 +74,17 @@ public class EnemyAggro : MonoBehaviour
         }
         else 
         {
-            speed = 5f;
+            speed = 3;
             
-            transform.Translate(lookDirection * -speed * Time.deltaTime);
+            rb.AddForce(lookDirection * speed, ForceMode.Acceleration);
 
-            if (transform.position.x >= pointB.transform.position.x || transform.position.x <= pointA.transform.position.x)
+            if (transform.position.x > pointB.transform.position.x || transform.position.x < pointA.transform.position.x)
             {
-                Debug.Log("Past");
                 
+                rb.velocity = new Vector2 (0,0);
+                rb.AddForce(lookDirection * -speed, ForceMode.Acceleration);
+                transform.position = new Vector3(currentPoint.position.x, transform.position.y, transform.position.z);
+
             }
            
         }
