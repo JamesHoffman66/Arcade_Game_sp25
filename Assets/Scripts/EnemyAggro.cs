@@ -74,19 +74,33 @@ public class EnemyAggro : MonoBehaviour
         }
         else 
         {
-            speed = 3;
-            
-            rb.AddForce(lookDirection * speed, ForceMode.Acceleration);
+            speed = 10;
 
-            if (transform.position.x > pointB.transform.position.x || transform.position.x < pointA.transform.position.x)
+            rb.velocity = new Vector2(0, 0);
+            rb.AddForce(lookDirection * speed, ForceMode.Acceleration);
+            
+
+           
+
+            if (transform.position.x > pointB.transform.position.x)
             {
                 
                 rb.velocity = new Vector2 (0,0);
                 rb.AddForce(lookDirection * -speed, ForceMode.Acceleration);
-                transform.position = new Vector3(currentPoint.position.x, transform.position.y, transform.position.z);
+                transform.position = new Vector3(pointB.transform.position.x, transform.position.y, transform.position.z);
+                
 
             }
-           
+            if (transform.position.x < pointA.transform.position.x)
+            {
+
+                rb.velocity = new Vector2(0, 0);
+                rb.AddForce(lookDirection * -speed, ForceMode.Acceleration);
+                transform.position = new Vector3(pointA.transform.position.x, transform.position.y, transform.position.z);
+
+
+            }
+
         }
         
     }
