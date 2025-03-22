@@ -39,11 +39,7 @@ public class EnemyAggro : MonoBehaviour
         bool player2InSight = angleToPlayer2 < fieldOfViewAngle / 2f;
 
 
-        if (Vector2.Distance(transform.position, player.transform.position) < aggroRange && playerInSight)
-        {
-            patrol = false;
-        }
-        else if (Vector2.Distance(transform.position, player2.transform.position) < aggroRange && player2InSight)
+        if (Vector2.Distance(transform.position, player.transform.position) < aggroRange && playerInSight || Vector2.Distance(transform.position, player2.transform.position) < aggroRange && player2InSight)
         {
             patrol = false;
         }
@@ -74,7 +70,7 @@ public class EnemyAggro : MonoBehaviour
         }
         else 
         {
-            speed = 10;
+            speed = 15;
 
             rb.velocity = new Vector2(0, 0);
             rb.AddForce(lookDirection * speed, ForceMode.Acceleration);
@@ -99,6 +95,10 @@ public class EnemyAggro : MonoBehaviour
                 transform.position = new Vector3(pointA.transform.position.x, transform.position.y, transform.position.z);
 
 
+            }
+            if (Vector2.Distance(transform.position, player.transform.position) > aggroRange || Vector2.Distance(transform.position, player2.transform.position) > aggroRange)
+            {
+                patrol = true;
             }
 
         }
