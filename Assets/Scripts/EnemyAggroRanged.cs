@@ -52,7 +52,8 @@ public class EnemyAggroRanged : MonoBehaviour
 
         if (patrol)
         {
-
+            speed = 1f;
+            spawnTimer = 2f;
             if (currentPoint == pointB.transform)
             {
                 rb.velocity = new Vector2(speed, 0);
@@ -85,12 +86,14 @@ public class EnemyAggroRanged : MonoBehaviour
             transform.Translate(lookDirection * -speed * Time.deltaTime);
 
             lookDirection2 = (player.transform.position - transform.position);
+
             
             spawnTimer += Time.deltaTime;
 
 
             if (spawnTimer >= spawnCooldown) 
             {
+                
                 SpawnProjectiles();
                 spawnTimer = 0f; 
             }
