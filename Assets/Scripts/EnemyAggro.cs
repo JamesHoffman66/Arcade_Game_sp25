@@ -96,7 +96,7 @@ public class EnemyAggro : MonoBehaviour
 
 
             }
-            if (Vector2.Distance(transform.position, player.transform.position) > aggroRange || Vector2.Distance(transform.position, player2.transform.position) > aggroRange)
+            if (Vector2.Distance(transform.position, player.transform.position) > aggroRange && Vector2.Distance(transform.position, player2.transform.position) > aggroRange)
             {
                 patrol = true;
             }
