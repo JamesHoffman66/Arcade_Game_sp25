@@ -151,8 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 0}
   pointB: {fileID: 0}
-  player: {fileID: 0}
-  player2: {fileID: 0}
+  player: {fileID: 4305071458677195024, guid: 778a5da8f023f1d479c44ad5ef58625c, type: 3}
+  player2: {fileID: 6230290666271896641, guid: da794fd9787811e40935f386eaa1e019, type: 3}
   projectile: {fileID: 4027552046427845257, guid: a5ecbe97f4f86c1439b660812eb7c29e, type: 3}
   projectileSpawner: {fileID: 8217676860854159507}
   rb: {fileID: 0}

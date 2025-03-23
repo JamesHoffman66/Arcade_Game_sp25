@@ -33578,6 +33578,7 @@ GameObject:
   - component: {fileID: 1750666270}
   - component: {fileID: 1750666269}
   - component: {fileID: 1750666272}
+  - component: {fileID: 1750666273}
   m_Layer: 0
   m_Name: Gate1
   m_TagString: Ground
@@ -33684,6 +33685,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touching: 0
+--- !u!65 &1750666273
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750666267}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!43 &1752941807
 Mesh:
   m_ObjectHideFlags: 0
@@ -41093,11 +41115,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3277294723144707829, guid: 778a5da8f023f1d479c44ad5ef58625c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 125.52
+      value: -9.89
       objectReference: {fileID: 0}
     - target: {fileID: 3277294723144707829, guid: 778a5da8f023f1d479c44ad5ef58625c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.69
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 3277294723144707829, guid: 778a5da8f023f1d479c44ad5ef58625c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -41201,11 +41223,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7628814457331399401, guid: da794fd9787811e40935f386eaa1e019, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 123.5
+      value: -12.36
       objectReference: {fileID: 0}
     - target: {fileID: 7628814457331399401, guid: da794fd9787811e40935f386eaa1e019, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.1
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 7628814457331399401, guid: da794fd9787811e40935f386eaa1e019, type: 3}
       propertyPath: m_LocalPosition.z
