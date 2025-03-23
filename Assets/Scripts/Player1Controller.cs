@@ -43,10 +43,15 @@ public class Player1Controller : MonoBehaviour
 
         }
 
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Spike") || collision.gameObject.CompareTag("EnemyProjectile"))
+        if (collision.gameObject.CompareTag("Spike"))
         {
             gameOver = true;
             Debug.Log("Game Over");
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject);
+            LivesCounterp1.instance.DecreaseLives();
         }
 
 
@@ -56,8 +61,10 @@ public class Player1Controller : MonoBehaviour
     {
         if (other.gameObject.CompareTag("EnemyProjectile"))
         {
-            Debug.Log("Game Over");
-            gameOver = true;
+
+            Destroy(other.gameObject);
+            LivesCounterp1.instance.DecreaseLives();
+
         }
     }
 }
