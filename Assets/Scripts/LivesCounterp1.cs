@@ -39,6 +39,7 @@ public class LivesCounterp1 : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("Game Over");
+            Time.timeScale = 0;
         }
     }
 
