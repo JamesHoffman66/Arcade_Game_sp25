@@ -69,6 +69,7 @@ public class Player2Controller : MonoBehaviour
         if (collision.gameObject.CompareTag("Spike"))
         {
             Debug.Log("Game Over");
+            Time.timeScale = 0;
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {

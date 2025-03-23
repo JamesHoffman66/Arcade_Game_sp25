@@ -47,6 +47,7 @@ public class Player1Controller : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("Game Over");
+            Time.timeScale = 0;
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {
