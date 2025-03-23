@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class EnemyAggroFixed : MonoBehaviour
@@ -120,8 +121,17 @@ public class EnemyAggroFixed : MonoBehaviour
                 transform.Rotate(0, 180, 0);
             }
         }
+        
 
 
+
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PlayerWeapon"))
+        {
+            Destroy(gameObject);
+        }
 
     }
 }

@@ -130,8 +130,16 @@ public class EnemyAggroRanged : MonoBehaviour
         newProjectile.GetComponent<ProjectileMove>().SetTargetPosition(targetPosition);
 
     }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PlayerWeapon"))
+        {
+            Destroy(gameObject);
+        }
 
-    
-    
+    }
+
+
+
 
 }
