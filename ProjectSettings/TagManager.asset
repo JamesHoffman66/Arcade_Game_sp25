@@ -8,6 +8,9 @@ TagManager:
   - Enemy
   - Spike
   - EnemyProjectile
+  - Player2
+  - Weapon
+  - PlayerWeapon
   layers:
   - Default
   - TransparentFX

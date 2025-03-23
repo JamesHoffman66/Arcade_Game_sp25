@@ -6,6 +6,7 @@ public class PlayerProjectileMove : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed = 5f;
+
     void Start()
     {
         
