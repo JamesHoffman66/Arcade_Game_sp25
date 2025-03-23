@@ -60,27 +60,33 @@ public class Player2Controller : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Player"))
         {
             isOnGround = true;
-            
+
         }
 
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Spike") || collision.gameObject.CompareTag("EnemyProjectile")) 
+        if (collision.gameObject.CompareTag("Spike"))
         {
-            Player1.GetComponent<Player1Controller>();
-            Player1Controller player1controller = Player1.GetComponent<Player1Controller>();
-            player1controller.gameOver = true;
-
+            Debug.Log("Game Over");
         }
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            isOnGround = true;
-            
+            Destroy(collision.gameObject);
+            LivesCounterp2.instance.DecreaseLives();
         }
-       
-       
 
 
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("EnemyProjectile"))
+        {
+
+            Destroy(other.gameObject);
+            LivesCounterp1.instance.DecreaseLives();
+
+        }
     }
 }   

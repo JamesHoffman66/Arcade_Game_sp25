@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LivesCounterp1 : MonoBehaviour
@@ -8,10 +9,12 @@ public class LivesCounterp1 : MonoBehaviour
     public static LivesCounterp1 instance;
     public TextMeshProUGUI livesText; // Reference to the UI Text
     private int lives = 3;
+    public bool gameOver;
 
     private void Awake()
     {
         instance = this;
+        gameOver = false;
     }
     void Start()
     {
@@ -30,5 +33,15 @@ public class LivesCounterp1 : MonoBehaviour
     {
         livesText.text = "Player 1 Lives: " + lives;
     }
+    public void Update()
+    {
+        if (lives == 0)
+        {
+            gameOver = true;
+            Debug.Log("Game Over");
+        }
+    }
+
+
 }
 
