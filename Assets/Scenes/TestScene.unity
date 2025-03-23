@@ -5609,8 +5609,6 @@ GameObject:
   - component: {fileID: 304575750}
   - component: {fileID: 304575749}
   - component: {fileID: 304575748}
-  - component: {fileID: 304575747}
-  - component: {fileID: 304575751}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -5627,25 +5625,12 @@ Transform:
   m_GameObject: {fileID: 304575745}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7062778, w: 0.7079348}
-  m_LocalPosition: {x: -12, y: 1.49, z: -2.76}
-  m_LocalScale: {x: 0.30098996, y: 0.6572001, z: 0.31037003}
+  m_LocalPosition: {x: 1.9818184, y: 0.04413789, z: 0.17841993}
+  m_LocalScale: {x: 0.26570222, y: 1.1949024, z: 0.69220316}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1151972058}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.866}
---- !u!114 &304575747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 304575745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eff02557886365548a844c3fc5f65621, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isVisible: 0
 --- !u!136 &304575748
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5719,19 +5704,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304575745}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &304575751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 304575745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a9979d16d357bb4fb8c9b8da68716e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 1151972052}
 --- !u!4 &304733870 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3104645094527205852, guid: 5725a08462c95974a9a00c20615181a4, type: 3}
@@ -40949,6 +40921,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2199782535890297965, guid: 778a5da8f023f1d479c44ad5ef58625c, type: 3}
+      propertyPath: sword
+      value: 
+      objectReference: {fileID: 304575745}
+    - target: {fileID: 2199782535890297965, guid: 778a5da8f023f1d479c44ad5ef58625c, type: 3}
       propertyPath: jumpForce
       value: 60
       objectReference: {fileID: 0}
@@ -41014,7 +40990,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3277294723144707829, guid: 778a5da8f023f1d479c44ad5ef58625c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 304575746}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 778a5da8f023f1d479c44ad5ef58625c, type: 3}
 --- !u!1001 &3608571936897486344
@@ -41205,7 +41184,6 @@ SceneRoots:
   - {fileID: 1955983177}
   - {fileID: 603917568}
   - {fileID: 2794202383334391706}
-  - {fileID: 304575746}
   - {fileID: 3608571936897486344}
   - {fileID: 9074703915320325205}
   - {fileID: 1478960347}

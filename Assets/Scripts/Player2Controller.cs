@@ -51,6 +51,21 @@ public class Player2Controller : MonoBehaviour
                 spawnTimer = 0f;
             }
         }
+        if (VerticalInput != 0)
+        {
+            float targetRotationY = VerticalInput > 0 ? 0 : 180f;
+
+            // If moving right (positive input), face right (normal scale)
+            if (VerticalInput > 0)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+            // If moving left (negative input), face left (flip the X scale)
+            else
+            {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+        }
 
     }
     private void SpawnProjectiles()
