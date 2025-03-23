@@ -16,6 +16,10 @@ public class PlayerProjectileMove : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.right * speed * Time.deltaTime);
+        if (transform.position.x < -43 || transform.position.x > 160)
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -28,5 +32,6 @@ public class PlayerProjectileMove : MonoBehaviour
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
+      
     }
 }
