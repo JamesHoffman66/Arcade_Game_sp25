@@ -38,7 +38,7 @@ public class Player1Controller : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.V))
             {
                 sword.gameObject.SetActive(true);
-                StartCoroutine(swordDelay(0.5f));
+                StartCoroutine(swordDelay(0.2f));
 
             }
         }   
