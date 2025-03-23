@@ -11,11 +11,15 @@ public class Player1Controller : MonoBehaviour
     public bool isOnGround;
     public float gravityMod;
     public bool gameOver;
+    public GameObject sword;
+    public bool attacking;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityMod;
+        sword.gameObject.SetActive(false);
+        attacking = false;
     }
 
     // Update is called once per frame
@@ -29,11 +33,33 @@ public class Player1Controller : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
         }
+        if (!attacking)
+        {
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                sword.gameObject.SetActive(true);
+                StartCoroutine(swordDelay(0.5f));
+
+            }
+        }   
+            
+     
+            
+
+            
         if (gameOver)
         {
             Debug.Log("Game Over");
         }
 
+    }
+    IEnumerator swordDelay(float delay)
+    {
+        attacking = true;
+        yield return new WaitForSeconds(delay);
+        sword.gameObject.SetActive(false);
+        yield return new WaitForSeconds(3.0f);
+        attacking = false;
     }
     private void OnCollisionEnter(Collision collision)
     {
