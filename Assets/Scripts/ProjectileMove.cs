@@ -1,24 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class ProjectileMove : MonoBehaviour
 {
     public float speed;
-    public Vector3 lookDirection;
-    public GameObject Player;
+    private Vector3 moveDirection;
 
-    void Start()
+    // Method to set the initial direction of the projectile
+    public void SetTargetPosition(Vector3 target)
     {
-        Player = GameObject.Find("Player1");
-
-        
-        lookDirection = (Player.transform.position - transform.position).normalized;
+        moveDirection = (target - transform.position).normalized;  // Calculate direction to the target
     }
 
     void Update()
     {
-        
-        transform.Translate(lookDirection * speed * Time.deltaTime);
+        // Keep moving in the same direction indefinitely
+        transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
     }
 }

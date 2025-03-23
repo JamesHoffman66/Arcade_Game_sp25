@@ -22347,6 +22347,37 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1683217495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1683217496}
+  m_Layer: 0
+  m_Name: ProjectileSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1683217496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683217495}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1976327162}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1686985546
 Mesh:
   m_ObjectHideFlags: 0
@@ -28683,6 +28714,14 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 4324780893878320952, guid: da794fd9787811e40935f386eaa1e019, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 5864319444854829668, guid: 124f04eb992fef94aa501edc8d0b002b, type: 3}
+    - target: {fileID: 4324780893878320952, guid: da794fd9787811e40935f386eaa1e019, type: 3}
+      propertyPath: projectileSpawner
+      value: 
+      objectReference: {fileID: 1683217495}
     - target: {fileID: 6230290666271896641, guid: da794fd9787811e40935f386eaa1e019, type: 3}
       propertyPath: m_Name
       value: Player2
@@ -28741,7 +28780,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7628814457331399401, guid: da794fd9787811e40935f386eaa1e019, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1683217496}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da794fd9787811e40935f386eaa1e019, type: 3}
 --- !u!1001 &9074703915320325205
