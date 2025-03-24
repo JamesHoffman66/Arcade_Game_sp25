@@ -20241,7 +20241,7 @@ Transform:
   m_GameObject: {fileID: 992850269}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.44, y: 6.84, z: -2.82}
+  m_LocalPosition: {x: 21.68, y: 6.84, z: -2.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25845,10 +25845,14 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1976327156}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6835026434679950952, guid: b4dcb0de8772fd041b8995e745ab8d65, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6483232954398978418, guid: b4dcb0de8772fd041b8995e745ab8d65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1714930451}
   m_SourcePrefab: {fileID: 100100000, guid: b4dcb0de8772fd041b8995e745ab8d65, type: 3}
 --- !u!43 &1230634314
 Mesh:
@@ -30967,7 +30971,7 @@ Transform:
   m_GameObject: {fileID: 1553930029}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.791, y: 6.831, z: -2.734}
+  m_LocalPosition: {x: 24.35, y: 6.831, z: -2.734}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33637,6 +33641,32 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5725a08462c95974a9a00c20615181a4, type: 3}
+--- !u!1 &1714930444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6483232954398978418, guid: b4dcb0de8772fd041b8995e745ab8d65, type: 3}
+  m_PrefabInstance: {fileID: 1228424773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1714930451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714930444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9053879be208d6b499e60ff06531537a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointA: {fileID: 992850269}
+  pointB: {fileID: 1553930029}
+  player: {fileID: 1151972052}
+  player2: {fileID: 1976327156}
+  rb: {fileID: 0}
+  speed: 2.5
+  patrol: 0
+  aggroRange: 10
+  fieldOfViewAngle: 60
 --- !u!1 &1716483981
 GameObject:
   m_ObjectHideFlags: 0
