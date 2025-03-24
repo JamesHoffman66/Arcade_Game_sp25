@@ -1172,6 +1172,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -1483259532372637427, guid: 1a1fa847dfe99b14c8f0f21df8dc25e7, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1151972052}
+    - target: {fileID: -1483259532372637427, guid: 1a1fa847dfe99b14c8f0f21df8dc25e7, type: 3}
       propertyPath: pointA
       value: 
       objectReference: {fileID: 1304141515}
@@ -1179,6 +1183,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 74760598}
+    - target: {fileID: -1483259532372637427, guid: 1a1fa847dfe99b14c8f0f21df8dc25e7, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 1976327156}
     - target: {fileID: 1284603753523091, guid: 1a1fa847dfe99b14c8f0f21df8dc25e7, type: 3}
       propertyPath: m_Name
       value: Enemy2(Ranged) (2)
@@ -9981,6 +9989,10 @@ PrefabInstance:
       value: Enemy1 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6835026434679950952, guid: b4dcb0de8772fd041b8995e745ab8d65, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1151972052}
+    - target: {fileID: 6835026434679950952, guid: b4dcb0de8772fd041b8995e745ab8d65, type: 3}
       propertyPath: pointA
       value: 
       objectReference: {fileID: 1314201627}
@@ -9988,6 +10000,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 1602859239}
+    - target: {fileID: 6835026434679950952, guid: b4dcb0de8772fd041b8995e745ab8d65, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 1976327156}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20240,6 +20256,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -1483259532372637427, guid: 1a1fa847dfe99b14c8f0f21df8dc25e7, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1151972052}
+    - target: {fileID: -1483259532372637427, guid: 1a1fa847dfe99b14c8f0f21df8dc25e7, type: 3}
       propertyPath: pointA
       value: 
       objectReference: {fileID: 2111022778}
@@ -20247,6 +20267,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 1985137755}
+    - target: {fileID: -1483259532372637427, guid: 1a1fa847dfe99b14c8f0f21df8dc25e7, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 1976327156}
     - target: {fileID: 1284603753523091, guid: 1a1fa847dfe99b14c8f0f21df8dc25e7, type: 3}
       propertyPath: m_Name
       value: Enemy2(Ranged) (1)
@@ -23557,6 +23581,10 @@ PrefabInstance:
       value: Enemy1 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6835026434679950952, guid: b4dcb0de8772fd041b8995e745ab8d65, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1151972052}
+    - target: {fileID: 6835026434679950952, guid: b4dcb0de8772fd041b8995e745ab8d65, type: 3}
       propertyPath: pointA
       value: 
       objectReference: {fileID: 1308854402}
@@ -23564,6 +23592,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 780471710}
+    - target: {fileID: 6835026434679950952, guid: b4dcb0de8772fd041b8995e745ab8d65, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 1976327156}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25798,6 +25830,10 @@ PrefabInstance:
       value: Enemy1 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6835026434679950952, guid: b4dcb0de8772fd041b8995e745ab8d65, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1151972052}
+    - target: {fileID: 6835026434679950952, guid: b4dcb0de8772fd041b8995e745ab8d65, type: 3}
       propertyPath: pointA
       value: 
       objectReference: {fileID: 992850269}
@@ -25805,6 +25841,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 1553930029}
+    - target: {fileID: 6835026434679950952, guid: b4dcb0de8772fd041b8995e745ab8d65, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 1976327156}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
