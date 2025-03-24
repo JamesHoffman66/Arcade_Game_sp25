@@ -61,7 +61,7 @@ public class EnemyAggroRanged : MonoBehaviour
 
         if (patrol)
         {
-            speed = 1f;
+            speed = 1.5f;
             spawnTimer = 2f;
             if (currentPoint == pointB.transform)
             {
