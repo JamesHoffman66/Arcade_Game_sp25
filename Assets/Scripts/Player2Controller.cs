@@ -34,12 +34,12 @@ public class Player2Controller : MonoBehaviour
         transform.Translate(Vector3.right * VerticalInput * speed * Time.deltaTime);
         spawnTimer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Alpha4) && isOnGround) 
+        if ((Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4)) && isOnGround) 
         {
             rb2.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
+        if ((Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5)) && isOnGround)
         {
             
            

@@ -34,7 +34,7 @@ public class LivesCounterp2 : MonoBehaviour
     }
     public void Update()
     {
-        if (lives == 0)
+        if (lives <= 0)
         {
             gameOver = true;
             Debug.Log("Game Over");
