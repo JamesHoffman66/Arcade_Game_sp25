@@ -17,7 +17,6 @@ public class Player1Controller : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Physics.gravity *= gravityMod;
         sword.gameObject.SetActive(false);
         attacking = false;
     }
@@ -88,7 +87,9 @@ public class Player1Controller : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("Game Over");
-            Time.timeScale = 0;
+            LivesCounterp1.instance.DecreaseLives();
+            LivesCounterp1.instance.DecreaseLives();
+            LivesCounterp1.instance.DecreaseLives();
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {

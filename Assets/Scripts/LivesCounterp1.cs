@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LivesCounterp1 : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class LivesCounterp1 : MonoBehaviour
     public TextMeshProUGUI livesText; // Reference to the UI Text
     private int lives = 3;
     public bool gameOver;
+    public GameObject player;
 
     private void Awake()
     {
@@ -39,8 +41,20 @@ public class LivesCounterp1 : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("Game Over");
-            Time.timeScale = 0;
+            StartCoroutine(GameRestart());
         }
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+    private IEnumerator GameRestart()
+    {
+        player.gameObject.SetActive(false);
+        yield return new WaitForSeconds(2.0f);
+        player.gameObject.SetActive(true);
+        SceneManager.LoadScene(0);
+        
     }
 
 

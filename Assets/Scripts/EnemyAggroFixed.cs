@@ -25,7 +25,7 @@ public class EnemyAggroFixed : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector2 directionToPlayer = player.transform.position - transform.position;
         Vector2 directionToPlayer2 = player2.transform.position - transform.position;
@@ -50,7 +50,7 @@ public class EnemyAggroFixed : MonoBehaviour
         }
         if (!patrol)
         {
-            speed = 15;
+            speed = 300;
 
             rb.velocity = new Vector2(0, 0);
             rb.AddForce(lookDirection * speed, ForceMode.Acceleration);

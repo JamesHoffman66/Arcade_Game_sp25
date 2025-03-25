@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LivesCounterp2 : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class LivesCounterp2 : MonoBehaviour
     public TextMeshProUGUI livesText; // Reference to the UI Text
     private int lives = 2;
     public bool gameOver;
+    public GameObject player;
+    
 
     private void Awake()
     {
@@ -38,7 +41,18 @@ public class LivesCounterp2 : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("Game Over");
-            Time.timeScale = 0;
+            StartCoroutine(GameRestart());
+            
         }
     }
+    private IEnumerator GameRestart()
+    {
+        player.gameObject.SetActive(false);
+        yield return new WaitForSeconds(2.0f);
+        player.gameObject.SetActive(true);
+        SceneManager.LoadScene(0);
+    
+    }
+    
+    
 }

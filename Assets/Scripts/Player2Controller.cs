@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.ProBuilder;
-using static UnityEditor.Experimental.GraphView.GraphView;
+
 
 public class Player2Controller : MonoBehaviour
 {
@@ -39,7 +39,7 @@ public class Player2Controller : MonoBehaviour
             rb2.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
         }
-        if ((Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5)) && isOnGround)
+        if ((Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5)))
         {
             
            
@@ -84,7 +84,9 @@ public class Player2Controller : MonoBehaviour
         if (collision.gameObject.CompareTag("Spike"))
         {
             Debug.Log("Game Over");
-            Time.timeScale = 0;
+            LivesCounterp1.instance.DecreaseLives();
+            LivesCounterp1.instance.DecreaseLives();
+            LivesCounterp1.instance.DecreaseLives();
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {
